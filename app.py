@@ -44,7 +44,7 @@ def main():
 
     # Age selection
     unique_age = df['user_age'].unique()
-    selected_age = st.sidebar.multiselect("Select age", unique_age, default=[])
+    selected_age = st.sidebar.multiselect("Select age", unique_age, default= unique_age[0:1])
 
     # Gender selection
     unique_sex = df['sex'].unique()
