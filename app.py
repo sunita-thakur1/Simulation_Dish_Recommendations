@@ -44,11 +44,11 @@ def main():
 
     # Age selection
     unique_age = df['user_age'].unique()
-    selected_age = st.sidebar.multiselect("Select age", unique_age, default= unique_age[0:1])
+    selected_age = st.sidebar.multiselect("Select age", unique_age, default= unique_age[:2])
 
     # Gender selection
     unique_sex = df['sex'].unique()
-    selected_gender = st.sidebar.multiselect("Select gender", unique_sex, default=unique_sex[0:1])
+    selected_gender = st.sidebar.multiselect("Select gender", unique_sex, default=unique_sex[:2])
 
   
     if st.sidebar.button("Get Recommendations"):
