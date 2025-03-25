@@ -15,7 +15,7 @@ def simulate_recommendations(df, user_preferences, num_recommendations=5):
 
 def main():
     st.title("Food Recommendation Simulation")
-    file_path = "/content/recommendation_model_updated_v4.csv"
+    file_path = "recommendation_model_updated_v4.csv"
     df = load_data(file_path)
     
     st.sidebar.header("User Taste")
