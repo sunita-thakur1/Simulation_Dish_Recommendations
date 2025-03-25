@@ -13,12 +13,12 @@ def simulate_recommendations(df, user_preferences, num_recommendations=5):
     filtered_df2 = df[df['user_cuisine'].isin(user_preferences.get('user_cuisine', df['user_cuisine'].unique()))]
     filtered_df3 = df[df['user_age'].isin(user_preferences.get('user_age', df['user_age'].unique()))]
     filtered_df4 = df[df['sex'].isin(user_preferences.get('sex', df['sex'].unique()))]
-    recommendations = filtered_df1.sample(n=min(num_recommendations, len(filtered_df1)), random_state=42)
-    recommendations = filtered_df2.sample(n=min(num_recommendations, len(filtered_df2)), random_state=42)
-    recommendations = filtered_df3.sample(n=min(num_recommendations, len(filtered_df3)), random_state=42)
-    recommendations = filtered_df4.sample(n=min(num_recommendations, len(filtered_df4)), random_state=42)
+    recommendations1 = filtered_df1.sample(n=min(num_recommendations, len(filtered_df1)), random_state=42)
+    recommendations2 = filtered_df2.sample(n=min(num_recommendations, len(filtered_df2)), random_state=42)
+    recommendations3 = filtered_df3.sample(n=min(num_recommendations, len(filtered_df3)), random_state=42)
+    recommendations4 = filtered_df4.sample(n=min(num_recommendations, len(filtered_df4)), random_state=42)
     
-    return recommendations
+    return recommendations1, recommendations2, recommendations3, recommendations4
 
 def main():
     st.title("Food Recommendation Simulation")
