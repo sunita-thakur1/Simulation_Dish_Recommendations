@@ -9,11 +9,15 @@ def load_data(file_path):
 
 def simulate_recommendations(df, user_preferences, num_recommendations=5):
     #Simulate recommendations based on user preferences.
-    filtered_df = df[df['taste'].isin(user_preferences.get('taste', df['taste'].unique()))]
-    filtered_df = df[df['user_cuisine'].isin(user_preferences.get('user_cuisine', df['user_cuisine'].unique()))]
-    filtered_df = df[df['user_age'].isin(user_preferences.get('user_age', df['user_age'].unique()))]
-    filtered_df = df[df['sex'].isin(user_preferences.get('sex', df['sex'].unique()))]
-    recommendations = filtered_df.sample(n=min(num_recommendations, len(filtered_df)), random_state=42)
+    filtered_df1 = df[df['taste'].isin(user_preferences.get('taste', df['taste'].unique()))]
+    filtered_df2 = df[df['user_cuisine'].isin(user_preferences.get('user_cuisine', df['user_cuisine'].unique()))]
+    filtered_df3 = df[df['user_age'].isin(user_preferences.get('user_age', df['user_age'].unique()))]
+    filtered_df4 = df[df['sex'].isin(user_preferences.get('sex', df['sex'].unique()))]
+    recommendations = filtered_df1.sample(n=min(num_recommendations, len(filtered_df1)), random_state=42)
+    recommendations = filtered_df2.sample(n=min(num_recommendations, len(filtered_df2)), random_state=42)
+    recommendations = filtered_df3.sample(n=min(num_recommendations, len(filtered_df3)), random_state=42)
+    recommendations = filtered_df4.sample(n=min(num_recommendations, len(filtered_df4)), random_state=42)
+    
     return recommendations
 
 def main():
