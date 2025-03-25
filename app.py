@@ -24,15 +24,15 @@ def main():
 
     st.sidebar.header("User Preferred cuisine")
     unique_cuisine = df['user_cuisine'].unique()
-    selected_cuisine = st.sidebar.multiselect("Select preferred cuisine", unique_cuisine, default=unique_tastes[:2])
+    selected_cuisine = st.sidebar.multiselect("Select preferred cuisine", unique_cuisine, default=unique_cuisine[:2])
 
     st.sidebar.header("User age")
     unique_age = df['user_age'].unique()
-    selected_age = st.sidebar.multiselect("Select age", unique_age, default=unique_tastes[:1])
+    selected_age = st.sidebar.multiselect("Select age", unique_age, default=unique_age[:1])
 
     st.sidebar.header("User Gender")
     unique_gender = df['sex'].unique()
-    selected_gender = st.sidebar.multiselect("Select gender", unique_gender, default=unique_tastes[:1])
+    selected_gender = st.sidebar.multiselect("Select gender", unique_gender, default=unique_gender[:1])
 
 
     
